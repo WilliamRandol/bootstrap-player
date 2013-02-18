@@ -140,7 +140,7 @@ $(function(){
 				return ("0" + myNum).slice(-2);
 			};
 			timesplit = function (a) {
-				if (isNaN(a)){return '<i class="icon-spinner icon-spin">Loading...</i>';}
+				if (isNaN(a)){return '<i class="icon-spinner icon-spin"></i>';}
 				var hours = Math.floor(a / 3600);
 				var minutes = Math.floor(a / 60) - (hours * 60);
 				var seconds = Math.floor(a) - (hours * 3600) - (minutes * 60);
@@ -179,7 +179,7 @@ $(function(){
 				time.showtime();
 			}
 			else {
-				time.html('<i class="icon-spinner icon-spin">Loading...</i>');
+				time.html('<i class="icon-spinner icon-spin"></i>');
 			}
 		}
 
