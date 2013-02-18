@@ -88,9 +88,9 @@ $(function(){
 				//console.log(bg);
 				seek.css('background', '-webkit-linear-gradient(left, ' + bg + ')');
 				seek.css('background','-o-linear-gradient(left,  ' + bg + ')');
-				seek.css('background','-moz-linear-gradient(left,  ' + bg + ')');
+				//seek.css('background','-moz-linear-gradient(left,  ' + bg + ')');
 				seek.css('background','-ms-linear-gradient(left,  ' + bg + ')');
-				seek.css('background','linear-gradient(to right,  ' + bg + ')');
+				//seek.css('background','linear-gradient(to right,  ' + bg + ')');
 				seek.css('background-color', '#ddd');
 			};
 			
@@ -312,6 +312,9 @@ $(function(){
 			}
 			playerbox.append(infoAtt);
 		}
+		$(song).on('error', function(){
+			$('btn').addClass('btn-danger');
+		});
 		return playerbox;
 	});
 });
