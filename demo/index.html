@@ -15,6 +15,27 @@
 			</div>
 		</header>
 		<section class="container">
+			<div class="span10 offset1">
+				<h2>bootstrap-player:</h2>
+				<p>I know that this is not 100% pixel perfect accross all the browsers, but at least it gives some consistancy to the audio player. Please feel free to fork this and make improvements.</p>
+				<p>Below are two examples of the bootstrap-player, the first one has additonal data using the html5 data- attribute. The second is nothing but the audio tag.</p>
+			</div>
+			<div class="row">
+				<section class="span6">
+<pre class="pre">&lt;audio controls
+  data-info-album-art="http://farm5.staticflickr.com/4050/4353986539_ec89b52698_d.jpg"
+  data-info-album-title="8874"
+  data-info-artist="Billy Murray"
+  data-info-title="Come, take a trip in my air-ship"
+  data-info-label="Edison Gold Moulded Record"
+  data-info-year="1905"
+  data-info-att="University of California, Santa Barbara Library."
+  data-info-att-link="http://cylinders.library.ucsb.edu/search.php?query=8874"&gt;
+  &lt;source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.ogg" type="audio/ogg" /&gt;
+  &lt;source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3" type="audio/mpeg" /&gt;
+  &lt;a href="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3"&gt;cusb_cyl2985d&lt;/a&gt;
+&lt;/audio&gt;</pre>
+
 			<audio controls
 				data-info-album-art="http://farm5.staticflickr.com/4050/4353986539_ec89b52698_d.jpg"
 				data-info-album-title="8874"
@@ -28,12 +49,21 @@
 				<source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3" type="audio/mpeg" />
 				<a href="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3">cusb_cyl2985d</a>
 			</audio>
+			</section>
+			<section class="span6">
+<pre class="pre">&lt;audio controls&gt;
+  &lt;source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg" /&gt;
+  &lt;source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg" /&gt;
+  &lt;a href="http://www.w3schools.com/html/horse.mp3"&gt;horse&lt;/a&gt;
+&lt;/audio&gt;</pre>
 			<audio controls>
 				<source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
 				<source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
 				<a href="http://www.w3schools.com/html/horse.mp3">horse</a>
 			</audio>
-		</section>
+			</section>
+			</div>
+			</section>
 		<footer class="container">
 			Airship Image From <a href="http://www.flickr.com/photos/mykeamend/4353986539/in/photostream/">Myke Amend</a>.
 		</footer>
