@@ -1,4 +1,4 @@
-input[type=range] {
+.playa input[type=range] {
     -webkit-appearance:none;
     -moz-apperance:none;
     background-color:#ddd;
@@ -6,10 +6,11 @@ input[type=range] {
 	height:.5em;
 	border-radius:.5em;
     width:100%;
-	margin:0;
-	padding:0;
+	margin:-2px;
+	padding:0 !important;
+	line-height:0;
 }
-input[type=range]::-webkit-slider-thumb {
+.playa input[type=range]::-webkit-slider-thumb {
     -webkit-appearance:none;
     -moz-apperance:none;
 	z-index:3;
@@ -23,10 +24,4 @@ input[type=range]::-webkit-slider-thumb {
 .playa {
 	width:100%;
 	text-align:center;
-}
-.playa .btn {
-	min-width:25px;
-}
-.playa .vol {
-	/*width:4em;*/
 }
