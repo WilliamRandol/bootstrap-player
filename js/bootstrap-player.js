@@ -6,7 +6,7 @@ $(function(){
 		var playerdataholder = $('<div class="accordian" id="dataholder">');
 		var playerdatagroup = $('<div class="accordian-group">');
 		var playerdatatoggle = $('<div class="accordian-heading">');
-		playerdatatoggle.html('<a class="accoridan-toggle">Details</a>');
+		playerdatatoggle.html('<a class="accoridan-toggle btn btn-mini">Details</a>');
 		var playerdatabody = $('<div id="playerdatawrapper" class="accordian-body collapse">');
 		playerdatatoggle.click(function (){playerdatabody.collapse('toggle')});
 		var playerdatainner = $('<div class="accordian-inner">');
