@@ -1,13 +1,15 @@
 $(function(){
-	$('audio[controls]').before(function () {
+	'use strict';
+	$('audio[controls]').before(function(){
 		var song = this;
 		song.controls=false;
 		var playerbox = $('<div class="well span4">');
 		var playerdataholder = $('<div class="accordian" id="dataholder">');
 		var playerdatagroup = $('<div class="accordian-group">');
 		var playerdatatoggle = $('<div class="accordian-heading">');
-		playerdatatoggle.html('<a class="accoridan-toggle" data-toggle="collapse" data-parent="#dataholder" href="#playerdatawrapper">Details</a>');
+		playerdatatoggle.html('<a class="accoridan-toggle btn btn-mini">Details</a>');
 		var playerdatabody = $('<div id="playerdatawrapper" class="accordian-body collapse">');
+		playerdatatoggle.click(function (){playerdatabody.collapse('toggle');});
 		var playerdatainner = $('<div class="accordian-inner">');
 		playerdatabody.append(playerdatainner);
 		playerdatagroup.append(playerdatatoggle);
@@ -16,7 +18,7 @@ $(function(){
 		var playerdata = $('<table class="table table-condensed" id="playerdata" data-toggel="collapse" data-toggle="#playerdata">');
 		var player = $('<section class="btn-group row-fluid clearfix playa">');
 
-		if ($(song).data('play') != 'off') {
+		if ($(song).data('play') !== 'off') {
 			var play = $('<button class="btn disabled span2">');
 			play.pauseButton = function () {
 				play.html('<i class="icon-pause"></i>');
@@ -50,7 +52,7 @@ $(function(){
 
 		}
 
-		if ($(song).data('seek') != 'off') {
+		if ($(song).data('seek') !== 'off') {
 			var seek = $('<input type="range">');
 			seek.attr({
 				'min': 0,
@@ -62,9 +64,9 @@ $(function(){
 				var bg = 'rgba(223, 240, 216, 1) 0%';
 				bg += ', rgba(223, 240, 216, 1) ' + ((song.currentTime/song.duration) * 100) + '%';
 				bg += ', rgba(223, 240, 216, 0) ' + ((song.currentTime/song.duration) * 100) + '%';
-				for (i=0; i<song.buffered.length; i++){
+				for (var i=0; i<song.buffered.length; i++){
 					//console.log(song.buffered.length + ' : ' + i + ' : ' + song.buffered.start(i) + ' : ' + song.buffered.end(i) + ' : ' + song.duration);
-					if (song.buffered.end(i) > song.currentTime && isNaN(song.buffered.end(i)) == false && isNaN(song.buffered.start(i)) == false){
+					if (song.buffered.end(i) > song.currentTime && isNaN(song.buffered.end(i)) === false && isNaN(song.buffered.start(i)) === false){
 						var bufferedstart;
 						var bufferedend;
 						if (song.buffered.end(i) < song.duration) {
@@ -115,7 +117,7 @@ $(function(){
 				song.currentTime = seek.val();
 			};
 
-			seekWrapper = $('<div class="btn disabled span3">');
+			var seekWrapper = $('<div class="btn disabled span3">');
 			seekWrapper.append(seek);
 			player.append(seekWrapper);
 
@@ -133,13 +135,13 @@ $(function(){
 		}
 
 		
-		if ($(song).data('time') != 'off') {
+		if ($(song).data('time') !== 'off') {
 			var time = $('<a class="btn span3">');
 			time.tooltip({'container': 'body', 'placement': 'right', 'html': true});
-			twodigit = function (myNum) {
+			var twodigit = function (myNum) {
 				return ("0" + myNum).slice(-2);
 			};
-			timesplit = function (a) {
+			var timesplit = function (a) {
 				if (isNaN(a)){return '<i class="icon-spinner icon-spin"></i>';}
 				var hours = Math.floor(a / 3600);
 				var minutes = Math.floor(a / 60) - (hours * 60);
@@ -183,7 +185,7 @@ $(function(){
 			}
 		}
 
-		if ($(song).data('mute') != 'off') {
+		if ($(song).data('mute') !== 'off') {
 			var mute = $('<button class="btn span2">');
 			mute.checkVolume = function () {
 				if (song.volume > 0.5 && !song.muted) {
@@ -212,7 +214,7 @@ $(function(){
 			$(song).on('volumechange', mute.checkVolume);
 		}
 
-		if ($(song).data('volume') != 'off') {
+		if ($(song).data('volume') !== 'off') {
 			var volume = $('<input type="range" class="vol">');
 			volume.attr({
 				'min': 0,
@@ -229,7 +231,7 @@ $(function(){
 				volume.val(song.volume);
 			};
 
-			volWrapper = $('<div class="btn disabled span3">');
+			var volWrapper = $('<div class="btn disabled span3">');
 			volWrapper.append(volume);
 			player.append(volWrapper);
 
@@ -237,11 +239,11 @@ $(function(){
 			$(song).on('volumechange', volume.set);
 		}
 
-		if (typeof($(song).data('infoAlbumArt')) != 'undefined'){
+		if (typeof($(song).data('infoAlbumArt')) !== 'undefined'){
 			var albumArt = $('<img class="thumbnail" src="'+ $(song).data('infoAlbumArt') + '">');
 			playerdatainner.append(albumArt);
 		}
-		if (typeof($(song).data('infoArtist')) != 'undefined'){
+		if (typeof($(song).data('infoArtist')) !== 'undefined'){
 			var artist = $('<tr>');
 			artist.title = $('<th>');
 			artist.title.html('Artist');
@@ -251,8 +253,8 @@ $(function(){
 			artist.append(infoArtist);
 			playerdata.append(artist);
 		}
-		if (typeof($(song).data('infoTitle')) != 'undefined'){
-			songTitle = $('<tr>');
+		if (typeof($(song).data('infoTitle')) !== 'undefined'){
+			var songTitle = $('<tr>');
 			songTitle.title = $('<th>');
 			songTitle.title.html('Title');
 			var infoTitle = $('<td>');
@@ -261,8 +263,8 @@ $(function(){
 			songTitle.append(infoTitle);
 			playerdata.find('tbody').append(songTitle);
 		}
-		if (typeof($(song).data('infoAlbumTitle')) != 'undefined'){
-			album = $('<tr>');
+		if (typeof($(song).data('infoAlbumTitle')) !== 'undefined'){
+			var album = $('<tr>');
 			album.title = $('<th>');
 			album.title.html('Album');
 			var infoAlbumTitle = $('<td>');
@@ -271,8 +273,8 @@ $(function(){
 			album.append(infoAlbumTitle);
 			playerdata.find('tbody').append(album);
 		}
-		if (typeof($(song).data('infoLabel')) != 'undefined'){
-			label = $('<tr>');
+		if (typeof($(song).data('infoLabel')) !== 'undefined'){
+			var label = $('<tr>');
 			label.title = $('<th>');
 			label.title.html('Label');
 			var infoLabel = $('<td>');
@@ -281,8 +283,8 @@ $(function(){
 			label.append(infoLabel);
 			playerdata.find('tbody').append(label);
 		}
-		if (typeof($(song).data('infoYear')) != 'undefined'){
-			year = $('<tr>');
+		if (typeof($(song).data('infoYear')) !== 'undefined'){
+			var year = $('<tr>');
 			year.title = $('<th>');
 			year.title.html('Year');
 			var infoYear = $('<td>');
@@ -299,9 +301,9 @@ $(function(){
 		
 		playerbox.append(player);
 
-		if (typeof($(song).data('infoAtt')) != 'undefined'){
+		if (typeof($(song).data('infoAtt')) !== 'undefined'){
 			var infoAtt = $('<small class="pull-right muted">');
-			if (typeof($(song).data('infoAttLink')) != 'undefined'){
+			if (typeof($(song).data('infoAttLink')) !== 'undefined'){
 				var infoAttLink = $('<a class="muted">');
 				infoAttLink.attr('href', $(song).data('infoAttLink'));
 				infoAttLink.html($(song).data('infoAtt'));
