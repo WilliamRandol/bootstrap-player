@@ -117,8 +117,7 @@ $(function(){
 					'max': song.duration,
 					'step': song.duration / 100
 				});
-				$(seek).val(0);
-				seek.progress();
+				seek.set();
 			};
 			seek.reset = function () {
 				$(seek).val(0);
@@ -131,7 +130,7 @@ $(function(){
 
 			$(seek_wrapper).append(seek);
 			$(seek).on('change', seek.slide);
-			$(song).on('timeupdate', seek.set);
+			$(song).on('timeupdate', seek.init);
 			$(song).on('loadedmetadata', seek.init);
 			$(song).on('loadeddata', seek.init);
 			$(song).on('progress', seek.init);
