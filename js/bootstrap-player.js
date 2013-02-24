@@ -279,17 +279,19 @@ $(function(){
 			$(player_box).append(player);
 		};
 		var addAttribution = function() {
-			var infoAtt = $('<small class="pull-right muted">');
+			var attribution = document.createElement('small');
+				$(attribution).addClass('pull-right muted');
 			if (typeof($(song).data('infoAttLink')) !== 'undefined'){
-				var infoAttLink = $('<a class="muted">');
-				infoAttLink.attr('href', $(song).data('infoAttLink'));
-				infoAttLink.html($(song).data('infoAtt'));
-				infoAtt.append(infoAttLink);
+				var attribution_link = document.createElement('a');
+					$(attribution_link).addClass('muted');
+					$(attribution_link).attr('href', $(song).data('infoAttLink'));
+					$(attribution_link).html($(song).data('infoAtt'));
+				$(attribution).append(infoAttLink);
 			}
 			else {
-				infoAtt.html($(song).data('infoAtt'));
+				$(attribution).html($(song).data('infoAtt'));
 			}
-			$(player_box).append(infoAtt);
+			$(player_box).append(attribution);
 		};
 		var fillPlayerBox = function() {
 			addData();
