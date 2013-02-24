@@ -286,7 +286,7 @@ $(function(){
 					$(attribution_link).addClass('muted');
 					$(attribution_link).attr('href', $(song).data('infoAttLink'));
 					$(attribution_link).html($(song).data('infoAtt'));
-				$(attribution).append(infoAttLink);
+				$(attribution).append(attribution_link);
 			}
 			else {
 				$(attribution).html($(song).data('infoAtt'));
