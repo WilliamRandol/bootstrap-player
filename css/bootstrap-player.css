@@ -35,7 +35,7 @@
 }
 
 @media (max-width: 979px) and (min-width: 768px){
-	.span4.playa, .playa.span4{
+	.span4 .playa, .playa.span4{
 		padding:0;
 	}
 }
