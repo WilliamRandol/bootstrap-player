@@ -57,11 +57,7 @@
 		width:100%;
 		display:block;
 	}
-	.span2 .playa, .span1 .playa, .playa.span2, .playa.span1{
-		padding:0;
-		overflow:hidden;
-	}
-	.span3 .playa, .playa.span3{
+	.span3 .playa, .span2 .playa, .span1 .playa, .playa.span3, .playa.span2, .playa.span1{
 		padding:0;
 		overflow:hidden;
 	}
