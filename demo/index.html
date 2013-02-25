@@ -6,6 +6,7 @@
 		<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.no-icons.min.css" type="text/css" rel="stylesheet">
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" type="text/css" rel="stylesheet">
 		<link href="css/bootstrap-player.css" type="text/css" rel="stylesheet">
+		<!--link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.css" rel="stylesheet" type="text/css"-->
 		<style>
 			.nav-primary.active a{
 				color:rgba(255, 255, 255, 0.75);
@@ -53,6 +54,36 @@
 					margin-left: -20px;
 				}
 			}
+			.com { color: #93a1a1; }
+			.lit { color: #195f91; }
+			.pun, .opn, .clo { color: #93a1a1; }
+			.fun { color: #dc322f; }
+			.str, .atv { color: #D14; }
+			.kwd, .prettyprint .tag { color: #1e347b; }
+			.typ, .atn, .dec, .var { color: teal; }
+			.pln { color: #48484c; }
+
+			.prettyprint {
+				padding: 8px;
+				background-color: #f7f7f9;
+				border: 1px solid #e1e1e8;
+			}
+			.prettyprint.linenums {
+			  -webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+				 -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+					  box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+			}
+
+			/* Specify class=linenums on a pre to get line numbering */
+			ol.linenums {
+			  margin: 0 0 0 33px; /* IE indents via margin-left */
+			}
+			ol.linenums li {
+			  padding-left: 12px;
+			  color: #bebec5;
+			  line-height: 20px;
+			  text-shadow: 0 1px 0 #fff;
+			}
 		</style>
 	</head>
 	<body>
@@ -62,13 +93,13 @@
 					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><i class="icon-reorder"></i></button>
 					<ul class="nav">
 						<li>
-							<a class="brand" href="/bootstrap-player/index.html"><i class="icon-home"></i> bootstrap-player</a>
+							<a class="brand" href="/bootstrap-player/"><i class="icon-home"></i> bootstrap-player</a>
 						</li>
 					</ul>
 					<div class="nav-collapse collapse">
 						<ul class="nav">
 							<li class="active">
-								<a href="/bootstrap-player/demo"><i class="icon-play"></i> Live Demo</a>
+								<a href="/bootstrap-player/demo/"><i class="icon-play"></i> Live Demo</a>
 							</li>
 						</ul>
 						<ul class="nav pull-right" >
@@ -112,20 +143,7 @@
 				</div>
 			</section>
 			<section class="row">
-				<div class="span6">
-<pre class="pre">&lt;audio controls
-  data-info-album-art="http://farm5.staticflickr.com/4050/4353986539_ec89b52698_d.jpg"
-  data-info-album-title="8874"
-  data-info-artist="Billy Murray"
-  data-info-title="Come, take a trip in my air-ship"
-  data-info-label="Edison Gold Moulded Record"
-  data-info-year="1905"
-  data-info-att="University of California, Santa Barbara Library."
-  data-info-att-link="http://cylinders.library.ucsb.edu/search.php?query=8874"&gt;
-  &lt;source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.ogg" type="audio/ogg" /&gt;
-  &lt;source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3" type="audio/mpeg" /&gt;
-  &lt;a href="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3"&gt;cusb_cyl2985d&lt;/a&gt;
-&lt;/audio&gt;</pre>
+				<div class="span4">
 					<audio controls
 						data-info-album-art="http://farm5.staticflickr.com/4050/4353986539_ec89b52698_d.jpg"
 						data-info-album-title="8874"
@@ -135,22 +153,45 @@
 						data-info-year="1905"
 						data-info-att="University of California, Santa Barbara Library."
 						data-info-att-link="http://cylinders.library.ucsb.edu/search.php?query=8874">
-						<source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.ogg" type="audio/ogg" />
-						<source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3" type="audio/mpeg" />
-						<a href="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3">cusb_cyl2985d</a>
+						<source src="http://goo.gl/xLQk8" type="audio/ogg" />
+						<source src="http://goo.gl/PF914" type="audio/mpeg" />
+						<a href="http://goo.gl/PF914">cusb_cyl2985d</a>
 					</audio>
-					Airship Image From <a href="http://www.flickr.com/photos/mykeamend/4353986539/in/photostream/">Myke Amend</a>.				</div>
-				<div class="span6">
-<pre class="pre">&lt;audio controls&gt;
-  &lt;source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg" /&gt;
-  &lt;source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg" /&gt;
-  &lt;a href="http://www.w3schools.com/html/horse.mp3"&gt;horse&lt;/a&gt;
-&lt;/audio&gt;</pre>
+					Airship Image From <a href="http://www.flickr.com/photos/mykeamend/4353986539/in/photostream/">Myke Amend</a>.
+				</div>
+				<div class="span8">
+					<h4>HTML Code</h4>
+<pre class="pre prettyprint linenums"><code class="language-html">&lt;audio controls
+	data-info-album-art="http://farm5.staticflickr.com/4050/4353986539_ec89b52698_d.jpg"
+	data-info-album-title="8874"
+	data-info-artist="Billy Murray"
+	data-info-title="Come, take a trip in my air-ship"
+	data-info-label="Edison Gold Moulded Record"
+	data-info-year="1905"
+	data-info-att="University of California, Santa Barbara Library."
+	data-info-att-link="http://cylinders.library.ucsb.edu/search.php?query=8874"&gt;
+	&lt;source src="http://goo.gl/xLQk8" type="audio/ogg" /&gt;
+	&lt;source src="http://goo.gl/PF914" type="audio/mpeg" /&gt;
+	&lt;a href="http://goo.gl/PF914"&gt;cusb_cyl2985d&lt;/a&gt;
+&lt;/audio&gt;</code></pre>
+				</div>
+			</section>
+			<hr />
+			<section class="row">
+				<div class="span4">
 					<audio controls>
 						<source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
 						<source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
 						<a href="http://www.w3schools.com/html/horse.mp3">horse</a>
 					</audio>
+				</div>
+				<div class="span8">
+					<h4>HTML Code</h4>
+<pre class="pre prettyprint linenums"><code class="language-html">&lt;audio controls&gt;
+	&lt;source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg" /&gt;
+	&lt;source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg" /&gt;
+	&lt;a href="http://www.w3schools.com/html/horse.mp3"&gt;horse&lt;/a&gt;
+&lt;/audio&gt;</code></pre>
 				</div>
 			</section>
 		</section>
@@ -161,7 +202,11 @@
 		</footer>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js" type="text/javascript"></script>
 		<script src="js/html5slider.js"></script>
 		<script src="js/bootstrap-player.js"></script>
+		<script>
+			addEventListener('load', function (event) { prettyPrint() }, false);
+		</script>
 	</body>
 </html>
