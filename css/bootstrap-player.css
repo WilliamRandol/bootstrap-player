@@ -34,6 +34,11 @@
 	text-align:center;
 }
 
+@media (max-width: 979px) and (min-width: 768px){
+	.span4 .playa, .playa.span4{
+		padding:0;
+	}
+}
 @media (min-width: 768px){
 	.playa .btn-group .btn {
 		padding:4px 3px;
@@ -57,7 +62,7 @@
 		width:100%;
 		display:block;
 	}
-	.span2 .playa, .span1 .playa, .playa.span2, .playa.span1{
+	.span4.playa, .span3 .playa, .span2 .playa, .span1 .playa, .playa.span4, .playa.span3, .playa.span2, .playa.span1{
 		padding:0;
 		overflow:hidden;
 	}
