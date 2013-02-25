@@ -209,7 +209,7 @@ $(function(){
 					$(mute).html('<i class="icon-volume-off"></i>');
 				}
 			};
-			mute.click(function () {
+			$(mute).click(function () {
 				if (song.muted) {
 					song.muted = false;
 					song.volume = song.oldvolume;
