@@ -34,7 +34,7 @@
 	text-align:center;
 }
 
-@media (min-width: 768px){
+@media (max-width: 979px) and (min-width: 768px){
 	.playa .btn-group .btn {
 		padding:4px 3px;
 		margin:auto;
