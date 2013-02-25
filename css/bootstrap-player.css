@@ -63,7 +63,7 @@
 	}
 }
 @media (max-width: 979px){
-	.span2 .playa, .span1 .playa, .playa.span2, .playa.span1{
+	.span3 .playa, .playa.span3{
 		padding:0;
 		overflow:hidden;
 	}
