@@ -1,81 +1,145 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Bootstrap-player : A Non-Intrusive HTML5 Audio Player Skin For Twitter Bootstrap" />
+	<head>
+		<title>bootstrap-player : Live Demo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.no-icons.min.css" type="text/css" rel="stylesheet">
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" type="text/css" rel="stylesheet">
+		<link href="css/bootstrap-player.css" type="text/css" rel="stylesheet">
+		<style>
+			.nav-primary.active a{
+				color:rgba(255, 255, 255, 0.75);
+			}
+			.nav-primary a{
+				color:#ffffff !important;
+				text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25) !important;
+				background-color:#006dcc !important;
+				background-image:-moz-linear-gradient(top, rgba(0, 136, 204, 0.75), rgba(0, 68, 204, 0.25)) !important;
+				background-image:-webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 136, 204, 0.75)), to(rgba(0, 68, 204, 0.25))) !important;
+				background-image:-webkit-linear-gradient(top, rgba(0, 136, 204, 0.75), rgba(0, 68, 204, 0.25)) !important;
+				background-image:-o-linear-gradient(top, rgba(0, 136, 204, 0.75), rgba(0, 68, 204, 0.25)) !important;
+				background-image:linear-gradient(to bottom, rgba(0, 136, 204, 0.75), rgba(0, 68, 204, 0.25)) !important;
+				background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(0, 136, 204, 0.75)', endColorstr='rgba(0, 68, 204, 0.25)', GradientType=0) !important;
+				border-color:#0044cc #0044cc #002a80 !important;
+				border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25) !important;
+				*background-color:#0044cc;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+			}
+			.nav-primary a:hover,.nav-primary a:focus,.nav-primary a:active,.nav-primary.active,.nav-primary.disabled,.nav-primary[disabled]{
+				color:#ffffff;
+				background-color:#0044cc !important;
+				*background-color:#003bb3 !important;
+			}
+			.nav-primary:active a,.nav-primary.active a{
+				background-color:#003399 \9 !important;
+			}
+			header, footer {
+				padding:20px;
+				background-color:#333;
+				color:#eee;
+				position:relative;
+			}
+			header {
+				padding-top:60px;
+				margin-top:-20px;
+				margin-bottom:20px;
+			}
+			footer {
+				margin-top:20px;
+			}
+			@media (max-width: 979px){
+				header, footer {
+					padding-top:0;
+					margin-right: -20px;
+					margin-left: -20px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><i class="icon-reorder"></i></button>
+					<ul class="nav">
+						<li class="active">
+							<a class="brand" href="/"><i class="icon-home"></i> bootstrap-player</a>
+						</li>
+					</ul>
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+							<li>
+								<a href="/demo"><i class="icon-play"></i> Live Demo</a>
+							</li>
+						</ul>
+						<ul class="nav pull-right" >
+							<li class="nav-primary">
+								<a href="https://github.com/WilliamRandol/bootstrap-player"><i class="icon-github"></i> GitHub Page</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<header>
+			<div class="container">
+				<h1 id="project_title">Bootstrap-player</h1>
+				<p id="project_tagline">A Non-Intrusive HTML5 Audio Player Skin For Twitter Bootstrap</p>
+				<div class="btn-toolbar">
+					<div class="btn-group pull-right">
+					  <a class="btn dropdown-toggle btn-success" data-toggle="dropdown">
+						<i class="icon-download-alt"></i>&nbsp; Download &nbsp;<span class="caret"></span>
+					  </a>
+					  <ul class="dropdown-menu">
+						<li>
+							<a href="https://github.com/WilliamRandol/bootstrap-player/zipball/master">.zip</a>
+						</li>
+						<li>
+							<a href="https://github.com/WilliamRandol/bootstrap-player/tarball/master">.tar.gz</a>
+						</li>
+					  </ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="container">
+			<section class="row">
+				<div class="span12">
+					<div id="main_content_wrap" class="outer">
+						<section id="main_content" class="inner">
+							<h1>bootstrap-player</h1>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+							<p>A Non-Intrusive HTML5 Audio Player Skin For Twitter Bootstrap</p>
 
-    <title>Bootstrap-player</title>
-  </head>
+							<h2><a href="http://williamrandol.github.com/bootstrap-player/demo/">Live Demo</a></h2>
 
-  <body>
+							<p>Requires:</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/WilliamRandol/bootstrap-player">View on GitHub</a>
+							<ul>
+								<li>Twitter Bootstrap - <a href="http://twitter.github.com/bootstrap/">http://twitter.github.com/bootstrap/</a></li>
+								<li>jQuery - <a href="http://jquery.com/">http://jquery.com/</a></li>
+							</ul>
+							<p>Firefox Support Requires</p>
+							<ul>
+								<li>html5slider - <a href="https://github.com/fryn/html5slider/">https://github.com/fryn/html5slider/</a></li>
+							</ul>
 
-          <h1 id="project_title">Bootstrap-player</h1>
-          <h2 id="project_tagline">A Non-Intrusive HTML5 Audio Player Skin For Twitter Bootstrap</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/WilliamRandol/bootstrap-player/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/WilliamRandol/bootstrap-player/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>bootstrap-player</h1>
-
-<p>A Non-Intrusive HTML5 Audio Player Skin For Twitter Bootstrap</p>
-
-<h2><a href="http://williamrandol.github.com/bootstrap-player/demo/">Live Demo</a></h2>
-
-<p>Requires:</p>
-
-<ul>
-<li>Twitter Bootstrap - <a href="http://twitter.github.com/bootstrap/">http://twitter.github.com/bootstrap/</a>
-</li>
-<li>jQuery - <a href="http://jquery.com/">http://jquery.com/</a>
-</li>
-</ul><p>Firefox Support Requires</p>
-
-<ul>
-<li>html5slider - <a href="https://github.com/fryn/html5slider/">https://github.com/fryn/html5slider/</a>
-</li>
-</ul><p>Additional Features When Using</p>
-
-<ul>
-<li>Font Awesome - <a href="http://fortawesome.github.com/Font-Awesome/">http://fortawesome.github.com/Font-Awesome/</a>
-</li>
-</ul>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Bootstrap-player maintained by <a href="https://github.com/WilliamRandol">WilliamRandol</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-38491570-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-
-  </body>
+							<p>Additional Features When Using</p>
+							<ul>
+								<li>Font Awesome - <a href="http://fortawesome.github.com/Font-Awesome/">http://fortawesome.github.com/Font-Awesome/</a></li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+		</section>
+		<footer>
+			<div class="container">
+				<p class="copyright">Bootstrap-player maintained by <a href="https://github.com/WilliamRandol">WilliamRandol</a></p>
+			</div>
+		</footer>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+		<script src="js/html5slider.js"></script>
+		<script src="js/bootstrap-player.js"></script>
+	</body>
 </html>

@@ -6,23 +6,113 @@
 		<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.no-icons.min.css" type="text/css" rel="stylesheet">
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" type="text/css" rel="stylesheet">
 		<link href="css/bootstrap-player.css" type="text/css" rel="stylesheet">
+		<style>
+			.nav-primary.active a{
+				color:rgba(255, 255, 255, 0.75);
+			}
+			.nav-primary a{
+				color:#ffffff !important;
+				text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25) !important;
+				background-color:#006dcc !important;
+				background-image:-moz-linear-gradient(top, rgba(0, 136, 204, 0.75), rgba(0, 68, 204, 0.25)) !important;
+				background-image:-webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 136, 204, 0.75)), to(rgba(0, 68, 204, 0.25))) !important;
+				background-image:-webkit-linear-gradient(top, rgba(0, 136, 204, 0.75), rgba(0, 68, 204, 0.25)) !important;
+				background-image:-o-linear-gradient(top, rgba(0, 136, 204, 0.75), rgba(0, 68, 204, 0.25)) !important;
+				background-image:linear-gradient(to bottom, rgba(0, 136, 204, 0.75), rgba(0, 68, 204, 0.25)) !important;
+				background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(0, 136, 204, 0.75)', endColorstr='rgba(0, 68, 204, 0.25)', GradientType=0) !important;
+				border-color:#0044cc #0044cc #002a80 !important;
+				border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25) !important;
+				*background-color:#0044cc;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+			}
+			.nav-primary a:hover,.nav-primary a:focus,.nav-primary a:active,.nav-primary.active,.nav-primary.disabled,.nav-primary[disabled]{
+				color:#ffffff;
+				background-color:#0044cc !important;
+				*background-color:#003bb3 !important;
+			}
+			.nav-primary:active a,.nav-primary.active a{
+				background-color:#003399 \9 !important;
+			}
+			header, footer {
+				padding:20px;
+				background-color:#333;
+				color:#eee;
+				position:relative;
+			}
+			header {
+				padding-top:60px;
+				margin-top:-20px;
+				margin-bottom:20px;
+			}
+			footer {
+				margin-top:20px;
+			}
+			@media (max-width: 979px){
+				header, footer {
+					padding-top:0;
+					margin-right: -20px;
+					margin-left: -20px;
+				}
+			}
+		</style>
 	</head>
 	<body>
-		<header style="background-color:#000; margin-bottom: 40px; color: #fff;">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><i class="icon-reorder"></i></button>
+					<ul class="nav">
+						<li>
+							<a class="brand" href="./index.html"><i class="icon-home"></i> bootstrap-player</a>
+						</li>
+					</ul>
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+							<li class="active">
+								<a href="/demo"><i class="icon-play"></i> Live Demo</a>
+							</li>
+						</ul>
+						<ul class="nav pull-right" >
+							<li class="nav-primary">
+								<a href="https://github.com/WilliamRandol/bootstrap-player"><i class="icon-github"></i> GitHub Page</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<header>
 			<div class="container">
-				<a class="btn btn-primary" href="http://williamrandol.github.com/bootstrap-player/"><i class="icon-github"></i> Home</a>
-				<h1>Live Demo</h1>
+				<h1 id="project_title">Bootstrap-player</h1>
+				<p id="project_tagline">A Non-Intrusive HTML5 Audio Player Skin For Twitter Bootstrap</p>
+				<div class="btn-toolbar">
+					<div class="btn-group pull-right">
+					  <a class="btn dropdown-toggle btn-success" data-toggle="dropdown">
+						<i class="icon-download-alt"></i>&nbsp; Download &nbsp;<span class="caret"></span>
+					  </a>
+					  <ul class="dropdown-menu">
+						<li>
+							<a href="https://github.com/WilliamRandol/bootstrap-player/zipball/master">.zip</a>
+						</li>
+						<li>
+							<a href="https://github.com/WilliamRandol/bootstrap-player/tarball/master">.tar.gz</a>
+						</li>
+					  </ul>
+					</div>
+				</div>
 			</div>
 		</header>
 		<section class="container">
-			<div class="span10 offset1">
-				<h2>bootstrap-player:</h2>
-				<p>I know that this is not 100% pixel perfect accross all the browsers, but at least it gives some consistancy to the audio player. Please feel free to fork this and make improvements.</p>
-				<p>Below are two examples of the bootstrap-player, the first one has additonal data using the html5 data- attribute. The second is nothing but the audio tag.</p>
-			</div>
-			<div class="row">
-				<section class="span6">
-				
+			<section class="row">
+				<div class="span12">
+					<div class="hero-unit">
+						<h2>bootstrap-player:</h2>
+						<p>I know that this is not 100% pixel perfect accross all the browsers, but at least it gives some consistancy to the audio player. Please feel free to fork this and make improvements.</p>
+						<p>Below are two examples of the bootstrap-player, the first one has additonal data using the html5 data- attribute. The second is nothing but the audio tag.</p>
+					</div>
+				</div>
+			</section>
+			<section class="row">
+				<div class="span6">
 <pre class="pre">&lt;audio controls
   data-info-album-art="http://farm5.staticflickr.com/4050/4353986539_ec89b52698_d.jpg"
   data-info-album-title="8874"
@@ -36,39 +126,38 @@
   &lt;source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3" type="audio/mpeg" /&gt;
   &lt;a href="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3"&gt;cusb_cyl2985d&lt;/a&gt;
 &lt;/audio&gt;</pre>
-
-			<audio controls
-				data-info-album-art="http://farm5.staticflickr.com/4050/4353986539_ec89b52698_d.jpg"
-				data-info-album-title="8874"
-				data-info-artist="Billy Murray"
-				data-info-title="Come, take a trip in my air-ship"
-				data-info-label="Edison Gold Moulded Record"
-				data-info-year="1905"
-				data-info-att="University of California, Santa Barbara Library."
-				data-info-att-link="http://cylinders.library.ucsb.edu/search.php?query=8874">
-				<source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.ogg" type="audio/ogg" />
-				<source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3" type="audio/mpeg" />
-				<a href="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3">cusb_cyl2985d</a>
-			</audio>
-			</section>
-			<section class="span6">
-			
+					<audio controls
+						data-info-album-art="http://farm5.staticflickr.com/4050/4353986539_ec89b52698_d.jpg"
+						data-info-album-title="8874"
+						data-info-artist="Billy Murray"
+						data-info-title="Come, take a trip in my air-ship"
+						data-info-label="Edison Gold Moulded Record"
+						data-info-year="1905"
+						data-info-att="University of California, Santa Barbara Library."
+						data-info-att-link="http://cylinders.library.ucsb.edu/search.php?query=8874">
+						<source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.ogg" type="audio/ogg" />
+						<source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3" type="audio/mpeg" />
+						<a href="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3">cusb_cyl2985d</a>
+					</audio>
+					Airship Image From <a href="http://www.flickr.com/photos/mykeamend/4353986539/in/photostream/">Myke Amend</a>.				</div>
+				<div class="span6">
 <pre class="pre">&lt;audio controls&gt;
   &lt;source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg" /&gt;
   &lt;source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg" /&gt;
   &lt;a href="http://www.w3schools.com/html/horse.mp3"&gt;horse&lt;/a&gt;
 &lt;/audio&gt;</pre>
-
-			<audio controls>
-				<source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
-				<source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
-				<a href="http://www.w3schools.com/html/horse.mp3">horse</a>
-			</audio>
+					<audio controls>
+						<source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
+						<source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
+						<a href="http://www.w3schools.com/html/horse.mp3">horse</a>
+					</audio>
+				</div>
 			</section>
+		</section>
+		<footer>
+			<div class="container">
+				<p class="copyright">Bootstrap-player maintained by <a href="https://github.com/WilliamRandol">WilliamRandol</a></p>
 			</div>
-			</section>
-		<footer class="container">
-			Airship Image From <a href="http://www.flickr.com/photos/mykeamend/4353986539/in/photostream/">Myke Amend</a>.
 		</footer>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
