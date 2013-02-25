@@ -61,8 +61,6 @@
 		padding:0;
 		overflow:hidden;
 	}
-}
-@media (max-width: 979px){
 	.span3 .playa, .playa.span3{
 		padding:0;
 		overflow:hidden;
