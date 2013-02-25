@@ -22,6 +22,43 @@
 }
 
 .playa {
-	width:100%;
+	/*margin:0;*/
+}
+
+.playa  .thumbnail  {
+	width:96%;
+	padding:1.5%;
+}
+
+.playa  .btn-group  {
 	text-align:center;
+}
+
+@media (min-width: 768px){
+	.playa .btn-group .btn {
+		padding:4px 3px;
+		margin:auto;
+		display:inline-block;
+		float:none;
+	}
+	.playa .btn-group .span1 {
+		width:8%;
+	}
+	.playa .btn-group .span2 {
+		width:16%;
+	}
+	.playa .btn-group .span3 {
+		width:25%;
+	}
+	.playa .btn-group .span4{
+		width:33%;
+	}
+	.playa.span2 .btn-group .btn, .playa.span1 .btn-group .btn, .span2 .playa .btn-group .btn, .span1 .playa .btn-group .btn{
+		width:100%;
+		display:block;
+	}
+	.span2 .playa, .span1 .playa, .playa.span2, .playa.span1{
+		padding:0;
+		overflow:hidden;
+	}
 }

@@ -4,17 +4,23 @@ $(function(){
 		var song = this;
 			song.controls=false;
 		var player_box = document.createElement('div');
-			$(player_box).addClass('well span4');
+			$(player_box).addClass($(song).attr('class') + ' well container-fluid playa');
 		var data_sec = document.createElement('section');
 			$(data_sec).addClass('collapse');
+		var toggle_holder = document.createElement('div');
+			$(toggle_holder).addClass('btn-group row-fluid');
 		var data_toggle = document.createElement('a');
-			$(data_toggle).text('Details');
-			$(data_toggle).addClass('btn btn-mini');
+			$(data_toggle).html('<i class="icon-reorder"></i>');
+			$(data_toggle).addClass('btn btn-block');
+			$(data_toggle).attr('style', 'opacity:0.3');
 			$(data_toggle).click(function (){$(data_sec).collapse('toggle');});
+			$(data_toggle).attr('title', 'Details');
+			$(data_toggle).tooltip({'container': 'body', 'placement': 'top', 'html': true});
+			$(toggle_holder).append(data_toggle);
 		var data_table = document.createElement('table');
 			$(data_table).addClass('table table-condensed');
 		var player = document.createElement('section');
-			$(player).addClass('btn-group row-fluid clearfix playa');
+			$(player).addClass('btn-group row-fluid');
 		var load_error = function(){
 			console.log('error');
 			$(player_box).find('.btn').addClass('disabled');
@@ -26,7 +32,7 @@ $(function(){
 		};
 		var addPlay = function() {
 			var play = document.createElement('button');
-				$(play).addClass('btn disabled span2');
+				$(play).addClass('btn disabled span1');
 			play.setPlayState = function(toggle){
 					$(play).removeClass('disabled');
 				if (toggle === 'play') {
@@ -126,7 +132,7 @@ $(function(){
 				else {song.play();}
 			};
 			var seek_wrapper = document.createElement('div');
-				$(seek_wrapper).addClass('btn disabled span3');
+				$(seek_wrapper).addClass('btn disabled span4');
 
 			$(seek_wrapper).append(seek);
 			$(seek).on('change', seek.slide);
@@ -193,7 +199,7 @@ $(function(){
 		};
 		var addMute = function() {
 			var mute = document.createElement('button');
-				$(mute).addClass('btn span2');
+				$(mute).addClass('btn span1');
 			mute.checkVolume = function () {
 				if (song.volume > 0.5 && !song.muted) {
 					$(mute).html('<i class="icon-volume-up"></i>');
@@ -266,7 +272,7 @@ $(function(){
 			if (typeof($(song).data('infoYear')) !== 'undefined'){ addInfo('Year', 'infoYear');}
 			if ($(data_table).html() !== ""){
 				$(data_sec).append(data_table);
-				$(player_box).append(data_toggle);
+				$(player_box).append(toggle_holder);
 				$(player_box).append(data_sec);
 			}
 		};
