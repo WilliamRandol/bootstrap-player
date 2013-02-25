@@ -33,14 +33,14 @@
 .playa  .btn-group  {
 	text-align:center;
 }
-
-@media (max-width: 979px) and (min-width: 768px){
 	.playa .btn-group .btn {
 		padding:4px 3px;
 		margin:auto;
 		display:inline-block;
 		float:none;
 	}
+
+@media (max-width: 979px) and (min-width: 768px){
 	.playa .btn-group .span1 {
 		width:8%;
 	}
