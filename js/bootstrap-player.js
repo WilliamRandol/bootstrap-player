@@ -1,4 +1,4 @@
-$(function(){
+(function($) {
 	'use strict';
 	$('audio[controls]').before(function(){
 		var song = this;
@@ -310,4 +310,4 @@ $(function(){
 		});
 		return player_box;
 	});
-});
+})(jQuery)
